@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
     {
         //if we don`t seek target
         //destroy
-        if(target == null)
+        if (target == null)
         {
             Destroy(gameObject);
             return;
@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
 
-        if(dir.magnitude <= distanceThisFrame)
+        if (dir.magnitude <= distanceThisFrame)
         {
             HitTarget();
             return;
@@ -43,9 +43,9 @@ public class Bullet : MonoBehaviour
     void HitTarget()
     {
         GameObject effectIns = (GameObject)Instantiate(ImpactEffect, transform.position, transform.rotation);
-        Destroy(effectIns, 5f);
+        Destroy(effectIns, 3f);
 
-        if(explosionRadius > 0f)
+        if (explosionRadius > 0f)
         {
             Explode(); //function
         }
@@ -53,15 +53,15 @@ public class Bullet : MonoBehaviour
         {
             Damage(target);
         }
-        
+
         Destroy(gameObject);
     }
     void Explode()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
-        foreach(Collider collider in colliders)
+        foreach (Collider collider in colliders)
         {
-            if(collider.tag == "Enemy")
+            if (collider.tag == "Enemy")
             {
                 Damage(collider.transform);
             }
@@ -71,10 +71,10 @@ public class Bullet : MonoBehaviour
     {
         Enemy e = enemy.GetComponent<Enemy>();
 
-        if(e != null)
+        if (e != null)
         {
             e.TakeDamage(damage);
-        }   
+        }
     }
 
     private void OnDrawGizmosSelected()

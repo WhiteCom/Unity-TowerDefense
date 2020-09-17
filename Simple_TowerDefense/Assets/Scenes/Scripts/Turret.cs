@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Turret Script
+/*
+ * 역할1 : 범위 내에서 가장 가까운 타겟 찾기
+ * 역할2 : 타겟이 있으면 해당 방향으로 에임 위치조준(회전)
+ * 범위의 경우 OnGizmoSelected 함수를 이용
+ */
 public class Turret : MonoBehaviour
 {
     private Transform target;
@@ -33,8 +39,11 @@ public class Turret : MonoBehaviour
     public Transform partToRotate;
     public float turnSpeed = 10f;
 
-    
     public Transform firePoint;
+
+    [Header("FireEffect Setup")]
+    public bool Effect_Check = false;
+    public GameObject FireEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -42,23 +51,28 @@ public class Turret : MonoBehaviour
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
+    //Update문에 쓰지 않는것은, 모든 프레임의 경우에 다 찾아야 한다. 
+    //타겟이 없는경우에도 타겟을 찾으려고 하기에, 이는 비효율적 작업. 
+    //따라서 메소드를 만들어놓고 몇초뒤에 실행되게 하는 InvokeRepeating을 이용하고자 함.
     void UpdateTarget() //marked enemy
     {
+        //적을 찾기전 적에 대한 정보를 가져와야함.
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
 
-        foreach(GameObject enemy in enemies)
+        //거리계산용
+        foreach (GameObject enemy in enemies)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if(distanceToEnemy < shortestDistance)
+            if (distanceToEnemy < shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
                 nearestEnemy = enemy;
             }
         }
-
-        if(nearestEnemy != null && shortestDistance <= range)
+        //적이 Gizmo범위내에 있을때, 즉 적을 인식했을때
+        if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
             targetEnemy = nearestEnemy.GetComponent<Enemy>();
@@ -72,7 +86,7 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target == null)
+        if (target == null) //적이 없는경우
         {
             if (useLaser) //laser를 사용하면
             {
@@ -82,7 +96,7 @@ public class Turret : MonoBehaviour
                     impactEffect.Stop();
                     impactLight.enabled = false;
                 }
-                    
+
             }
             return;
         }
@@ -112,7 +126,7 @@ public class Turret : MonoBehaviour
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f); //y축만 회전되게 
     }
-        
+
     void Laser()
     {
         targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
@@ -124,7 +138,7 @@ public class Turret : MonoBehaviour
             impactEffect.Play();
             impactLight.enabled = true;
         }
-  
+
 
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, target.position);
@@ -143,6 +157,12 @@ public class Turret : MonoBehaviour
 
         if (bullet != null)
             bullet.Seek(target);
+
+        if(Effect_Check == true)
+        {
+            GameObject effectIns = (GameObject)Instantiate(FireEffect, firePoint.position, firePoint.rotation);
+            Destroy(effectIns, 3f);
+        }
     }
 
     private void OnDrawGizmosSelected() //Range part
