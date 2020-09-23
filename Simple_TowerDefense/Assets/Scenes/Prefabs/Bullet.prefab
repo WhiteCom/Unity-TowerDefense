@@ -55,6 +55,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -91,6 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed0ee9c6e99925b4e86f82cf62874457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 70
+  speed: 30
+  damage: 50
+  explosionRadius: 0
   ImpactEffect: {fileID: 4043069053495161849, guid: e252c4f9562790d44bfff575c668ae16,
     type: 3}

@@ -4939,13 +4939,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed0ee9c6e99925b4e86f82cf62874457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
-  damage: 80
+  speed: 40
+  damage: 100
   explosionRadius: 0
   ImpactEffect: {fileID: 313929561015876193, guid: dfe1637724baf8341b216249cd7bd8e5,
-    type: 3}
-  FireEffectOn: 0
-  FireEffect: {fileID: 8304132204752094897, guid: f9820bbccbd81cd40b0e766c5514ef45,
     type: 3}
 --- !u!1 &6241575993049075686
 GameObject:

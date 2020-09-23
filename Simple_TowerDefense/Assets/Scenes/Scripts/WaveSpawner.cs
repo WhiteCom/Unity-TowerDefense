@@ -49,6 +49,7 @@ public class WaveSpawner : MonoBehaviour
 
         waveCountdownText.text = "Next Wave : " + string.Format("{0:0.00}", countdown);
     }
+    
     IEnumerator SpawnWave()
     {
         PlayerStats.Rounds++;
@@ -65,6 +66,7 @@ public class WaveSpawner : MonoBehaviour
         }
         waveIndex++;
     }
+    
     void SpawnEnemy(GameObject enemy)
     {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);

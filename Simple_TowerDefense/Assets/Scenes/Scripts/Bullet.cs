@@ -43,6 +43,7 @@ public class Bullet : MonoBehaviour
     void HitTarget()
     {
         GameObject effectIns = (GameObject)Instantiate(ImpactEffect, transform.position, transform.rotation);
+      
         Destroy(effectIns, 3f);
 
         if (explosionRadius > 0f)
@@ -56,6 +57,7 @@ public class Bullet : MonoBehaviour
 
         Destroy(gameObject);
     }
+
     void Explode()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);

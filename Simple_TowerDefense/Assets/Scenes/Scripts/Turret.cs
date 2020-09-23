@@ -11,7 +11,9 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     private Transform target;
+    private Transform target2;
     private Enemy targetEnemy;
+    private Enemy targetEnemy2;
 
     [Header("General")]
 
@@ -21,6 +23,7 @@ public class Turret : MonoBehaviour
     public GameObject bulletPrefab;
     public float fireRate = 1f;
     private float fireCountdown = 0f;
+    public bool multiShot = false;
 
     [Header("Use Laser")]
     public bool useLaser = false;
@@ -29,6 +32,12 @@ public class Turret : MonoBehaviour
     public float slowPct = .5f;
 
     public LineRenderer lineRenderer;
+
+    [Header("Use Laser2")]
+    public bool useLaser2 = false;
+    public int damage = 100;
+
+    public TrailRenderer trailRenderer;
     public ParticleSystem impactEffect;
     public Light impactLight;
 
@@ -40,12 +49,11 @@ public class Turret : MonoBehaviour
     public float turnSpeed = 10f;
 
     public Transform firePoint;
-
+    
     [Header("FireEffect Setup")]
     public bool Effect_Check = false;
     public GameObject FireEffect;
 
-    // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
@@ -60,8 +68,10 @@ public class Turret : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
+        GameObject secondEnemy = null;
+        //GameObject ThirdEnemy = null;
 
-        //거리계산용
+        //가장 가까운 적 찾는 거리계산용
         foreach (GameObject enemy in enemies)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
@@ -70,12 +80,28 @@ public class Turret : MonoBehaviour
                 shortestDistance = distanceToEnemy;
                 nearestEnemy = enemy;
             }
+            if (multiShot == true)
+            {
+                //멀티샷에 타겟팅 될 적들 찾기
+                float distancefromEnemy = Vector3.Distance(nearestEnemy.transform.position, enemy.transform.position);
+                if(distancefromEnemy < 6f)
+                {
+                    secondEnemy = enemy;
+                }
         }
+        }
+        
+
         //적이 Gizmo범위내에 있을때, 즉 적을 인식했을때
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
             targetEnemy = nearestEnemy.GetComponent<Enemy>();
+            if(multiShot == true)
+            {
+                target2 = secondEnemy.transform;
+                targetEnemy2 = secondEnemy.GetComponent<Enemy>();
+            }
         }
         else
         {
@@ -139,7 +165,6 @@ public class Turret : MonoBehaviour
             impactLight.enabled = true;
         }
 
-
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, target.position);
 
@@ -154,9 +179,22 @@ public class Turret : MonoBehaviour
     {
         GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGo.GetComponent<Bullet>();
+        if (multiShot == true)
+        {
+            //멀티샷이 활성화되있으면 총알 더 추가
+            GameObject bulletGo2 = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            //bulletGo2.transform.rotation = Quaternion.Euler(transform.eulerAngles + new Vector3(0,-45f,0));
+            Bullet bullet2 = bulletGo2.GetComponent<Bullet>();
 
+            if (bullet2 != null)
+                bullet2.Seek(target2);
+        }
+        
         if (bullet != null)
+        {
             bullet.Seek(target);
+        }
+            
 
         if(Effect_Check == true)
         {
@@ -170,4 +208,5 @@ public class Turret : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }
+
 }
