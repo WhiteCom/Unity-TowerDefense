@@ -49,10 +49,14 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2409480001873481750, guid: cdf64dabbb337e64d90c1f5301383410,
     type: 3}
   fireRate: 1
+  multiShot: 1
   useLaser: 0
   damageOverTime: 30
   slowPct: 0.5
   lineRenderer: {fileID: 0}
+  useLaser2: 0
+  damage: 100
+  trailRenderer: {fileID: 0}
   impactEffect: {fileID: 0}
   impactLight: {fileID: 0}
   enemyTag: Enemy

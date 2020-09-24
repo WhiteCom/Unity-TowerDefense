@@ -40508,7 +40508,7 @@ PrefabInstance:
     - target: {fileID: 8200638064831369513, guid: 9d7120857b8ca6d4dbefbd8a233c879d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8200638064831369515, guid: 9d7120857b8ca6d4dbefbd8a233c879d,
         type: 3}
@@ -41347,21 +41347,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chess_knight
       objectReference: {fileID: 0}
-    - target: {fileID: 184285354411105195, guid: fd75ba9451eedf34ea2aa1d227dc00fb,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 184285354411105196, guid: fd75ba9451eedf34ea2aa1d227dc00fb,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 184285354411105196, guid: fd75ba9451eedf34ea2aa1d227dc00fb,
-        type: 3}
-      propertyPath: multiShot
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 704081209550651665, guid: fd75ba9451eedf34ea2aa1d227dc00fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41687,7 +41672,7 @@ PrefabInstance:
     - target: {fileID: 5860691907696614094, guid: 6fe63db00d1bfe148995b62dae8d3ef5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5860691907696614095, guid: 6fe63db00d1bfe148995b62dae8d3ef5,
         type: 3}

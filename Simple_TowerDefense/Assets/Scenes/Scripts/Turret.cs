@@ -10,10 +10,14 @@ using UnityEngine;
  */
 public class Turret : MonoBehaviour
 {
+    //일반공격 target, 멀티샷 = target + target2 + target3
     private Transform target;
     private Transform target2;
+    private Transform target3;
+
     private Enemy targetEnemy;
     private Enemy targetEnemy2;
+    private Enemy targetEnemy3;
 
     [Header("General")]
 
@@ -69,7 +73,7 @@ public class Turret : MonoBehaviour
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
         GameObject secondEnemy = null;
-        //GameObject ThirdEnemy = null;
+        GameObject thirdEnemy = null;
 
         //가장 가까운 적 찾는 거리계산용
         foreach (GameObject enemy in enemies)
@@ -84,11 +88,21 @@ public class Turret : MonoBehaviour
             {
                 //멀티샷에 타겟팅 될 적들 찾기
                 float distancefromEnemy = Vector3.Distance(nearestEnemy.transform.position, enemy.transform.position);
-                if(distancefromEnemy < 6f)
+                
+                if (distancefromEnemy < 9f)
                 {
+                    Debug.Log("Second");
                     secondEnemy = enemy;
                 }
-        }
+
+                float distancefromEnemy2 = Vector3.Distance(secondEnemy.transform.position, enemy.transform.position);
+
+                if (distancefromEnemy2 < 9f)
+                {
+                    Debug.Log("Third");
+                    thirdEnemy = enemy;
+                }
+            }
         }
         
 
@@ -101,6 +115,9 @@ public class Turret : MonoBehaviour
             {
                 target2 = secondEnemy.transform;
                 targetEnemy2 = secondEnemy.GetComponent<Enemy>();
+
+                target3 = thirdEnemy.transform;
+                targetEnemy3 = thirdEnemy.GetComponent<Enemy>();
             }
         }
         else
@@ -177,17 +194,24 @@ public class Turret : MonoBehaviour
 
     void Shoot()
     {
+        //일반공격
         GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGo.GetComponent<Bullet>();
+
         if (multiShot == true)
         {
             //멀티샷이 활성화되있으면 총알 더 추가
             GameObject bulletGo2 = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            //bulletGo2.transform.rotation = Quaternion.Euler(transform.eulerAngles + new Vector3(0,-45f,0));
             Bullet bullet2 = bulletGo2.GetComponent<Bullet>();
+
+            GameObject bulletGo3 = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Bullet bullet3 = bulletGo3.GetComponent<Bullet>();
 
             if (bullet2 != null)
                 bullet2.Seek(target2);
+
+            if (bullet3 != null)
+                bullet3.Seek(target3);
         }
         
         if (bullet != null)
