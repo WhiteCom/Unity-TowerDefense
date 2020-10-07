@@ -11,7 +11,7 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     //일반공격 target, 멀티샷 = target + target2 + target3
-    private Transform target;
+    public Transform target;
     private Transform target2;
     private Transform target3;
 
@@ -36,26 +36,29 @@ public class Turret : MonoBehaviour
     public float slowPct = .5f;
 
     public LineRenderer lineRenderer;
+    public Light impactLight;
+    public ParticleSystem impactEffect;
 
-    [Header("Use Laser2")]
+    [Header("Use LaserBurst")]
     public bool useLaser2 = false;
     public int damage = 100;
+   
+    private float attackTime = 7f; //발사 지속 시간
+    public float attackTimeCalc = 7f;
 
-    public TrailRenderer trailRenderer;
-    public ParticleSystem impactEffect;
-    public Light impactLight;
+    public GameObject LaserEffect;
 
     [Header("Unity Setup Fields")]
 
     public string enemyTag = "Enemy";
 
-    public Transform partToRotate;
+    public Transform partToRotate; //발사시 회전할 오브젝트(헤드부분)
     public float turnSpeed = 10f;
 
-    public Transform firePoint;
+    public Transform firePoint; //발사지점 (발사체 생성위치)
     
     [Header("FireEffect Setup")]
-    public bool Effect_Check = false;
+    public bool Effect_Check = false; //발사시 이펙트 효과 여부
     public GameObject FireEffect;
 
     void Start()
@@ -84,7 +87,7 @@ public class Turret : MonoBehaviour
                 shortestDistance = distanceToEnemy;
                 nearestEnemy = enemy;
             }
-            if (multiShot == true)
+            if (multiShot)
             {
                 //멀티샷에 타겟팅 될 적들 찾기
                 float distancefromEnemy = Vector3.Distance(nearestEnemy.transform.position, enemy.transform.position);
@@ -105,7 +108,6 @@ public class Turret : MonoBehaviour
             }
         }
         
-
         //적이 Gizmo범위내에 있을때, 즉 적을 인식했을때
         if (nearestEnemy != null && shortestDistance <= range)
         {
@@ -141,6 +143,8 @@ public class Turret : MonoBehaviour
                 }
 
             }
+            //Laser2일때는 계속 발사되는 애니메이션이 있으므로, 중간에 비활성화 하지 않음.
+           
             return;
         }
 
@@ -149,6 +153,18 @@ public class Turret : MonoBehaviour
         if (useLaser)
         {
             Laser();
+        }
+        else if (useLaser2)
+        {
+            //코루틴, Invoke 함수를 사용할경우, 유니티 씬에서 문제가 있어, attackTime을 이용하여, 시간지연을 구현
+
+            Laser2();
+            if (attackTime <= 0f)
+            {
+                LaserStop();
+                attackTime = attackTimeCalc;
+            }
+            attackTime -= Time.deltaTime; 
         }
         else
         {
@@ -188,8 +204,23 @@ public class Turret : MonoBehaviour
         Vector3 dir = firePoint.position - target.position;
 
         impactEffect.transform.position = target.position + dir.normalized;
-
         impactEffect.transform.rotation = Quaternion.LookRotation(dir);
+    }
+
+    void Laser2() //Queen 타워에 쓰일 관통 레이저빔
+    {
+        
+        if (!LaserEffect.activeSelf)
+        {
+            LaserEffect.SetActive(true);
+        }
+        
+
+    }
+
+    void LaserStop()
+    {
+        LaserEffect.SetActive(false);
     }
 
     void Shoot()
