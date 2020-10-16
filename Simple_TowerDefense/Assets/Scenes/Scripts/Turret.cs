@@ -144,7 +144,16 @@ public class Turret : MonoBehaviour
 
             }
             //Laser2일때는 계속 발사되는 애니메이션이 있으므로, 중간에 비활성화 하지 않음.
-           
+            else if (useLaser2)
+            {
+                //타겟이 null이되면 attackTime이 남아있어, 공격이 딜레이 되는 경우 발생, 따라서 이를 해결하고자 Time에 따라 감소하게 함
+                if (LaserEffect.activeSelf)
+                {
+                    if (attackTime > 0f)
+                        attackTime -= Time.deltaTime;
+                }
+                    
+            }
             return;
         }
 
@@ -157,14 +166,13 @@ public class Turret : MonoBehaviour
         else if (useLaser2)
         {
             //코루틴, Invoke 함수를 사용할경우, 유니티 씬에서 문제가 있어, attackTime을 이용하여, 시간지연을 구현
-
             Laser2();
             if (attackTime <= 0f)
             {
                 LaserStop();
                 attackTime = attackTimeCalc;
             }
-            attackTime -= Time.deltaTime; 
+            attackTime -= Time.deltaTime;
         }
         else
         {
@@ -209,13 +217,10 @@ public class Turret : MonoBehaviour
 
     void Laser2() //Queen 타워에 쓰일 관통 레이저빔
     {
-        
         if (!LaserEffect.activeSelf)
         {
             LaserEffect.SetActive(true);
         }
-        
-
     }
 
     void LaserStop()
@@ -263,5 +268,4 @@ public class Turret : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }
-
 }
