@@ -29,6 +29,12 @@ public class Node : MonoBehaviour
     }
     public Vector3 GetBuildPosition()
     {
+        TurretBlueprint _blueprint = buildManager.GetTowerToBuild();
+        if(_blueprint == null)
+        {
+            return transform.position + positionOffset;
+        }
+        positionOffset = _blueprint.prefab.transform.position;
         return transform.position + positionOffset;
     }
 
@@ -37,7 +43,6 @@ public class Node : MonoBehaviour
         //turret을 select후 shop UI와 node가 간섭끼치지 않게 하기 위한 코드
         if (EventSystem.current.IsPointerOverGameObject())
             return;
-
 
         if(turret != null)
         {
@@ -48,7 +53,7 @@ public class Node : MonoBehaviour
         if (!buildManager.CanBuild)
             return;
 
-        BuildTurret(buildManager.GetTurretToBuild());
+        BuildTurret(buildManager.GetTowerToBuild());
     }
 
     void BuildTurret (TurretBlueprint blueprint)

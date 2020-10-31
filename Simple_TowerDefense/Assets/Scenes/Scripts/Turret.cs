@@ -94,7 +94,6 @@ public class Turret : MonoBehaviour
                 
                 if (distancefromEnemy < 9f)
                 {
-                    Debug.Log("Second");
                     secondEnemy = enemy;
                 }
 
@@ -102,7 +101,6 @@ public class Turret : MonoBehaviour
 
                 if (distancefromEnemy2 < 9f)
                 {
-                    Debug.Log("Third");
                     thirdEnemy = enemy;
                 }
             }

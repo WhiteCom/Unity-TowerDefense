@@ -19,7 +19,7 @@ public class CameraController : MonoBehaviour
             this.enabled = false;
             return;
         }
-        
+        /*
         if (Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panBorderThickness)
         {
             transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
@@ -37,7 +37,25 @@ public class CameraController : MonoBehaviour
         {
             transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
         }
+        */
 
+        if (Input.GetKey("w"))
+        {
+            transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
+        }
+
+        if (Input.GetKey("s"))
+        {
+            transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.World);
+        }
+        if (Input.GetKey("d"))
+        {
+            transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.World);
+        }
+        if (Input.GetKey("a"))
+        {
+            transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
+        }
         float scroll = Input.GetAxis("Mouse ScrollWheel");
 
         Vector3 pos = transform.position;

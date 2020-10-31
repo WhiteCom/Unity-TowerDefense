@@ -62,7 +62,7 @@ public class WaveSpawner : MonoBehaviour
         for (int i = 0; i < wave.count; i++)
         {
             SpawnEnemy(wave.enemy);
-            yield return new WaitForSeconds(1f / wave.rate); //half second
+            yield return new WaitForSeconds(1f / wave.rate); 
         }
         waveIndex++;
     }

@@ -17,14 +17,14 @@ public class BuildManager : MonoBehaviour
     public GameObject buildEffect;
     public GameObject sellEffect;
 
-    private TurretBlueprint turretToBuild;
+    private TurretBlueprint TowerToBuild;
     private Node selectedNode;
 
     public NodeUI nodeUI;
 
     //property, only allow ourselves to get something from this variable
-    public bool CanBuild { get { return turretToBuild != null; } }
-    public bool HasMoney { get { return PlayerStats.Money >= turretToBuild.cost; } }
+    public bool CanBuild { get { return TowerToBuild != null; } }
+    public bool HasMoney { get { return PlayerStats.Money >= TowerToBuild.cost; } }
 
    
     public void SelectNode(Node node)
@@ -36,7 +36,7 @@ public class BuildManager : MonoBehaviour
         }
 
         selectedNode = node;
-        turretToBuild = null;
+        TowerToBuild = null;
 
         nodeUI.SetTarget(node);
     }
@@ -47,15 +47,15 @@ public class BuildManager : MonoBehaviour
         nodeUI.Hide();
     }
 
-    public void SelectTurretToBuild(TurretBlueprint turret)
+    public void SelectTowerToBuild(TurretBlueprint tower)
     {
-        turretToBuild = turret;
+        TowerToBuild = tower;
 
         DeselectNode();
     }
     
-    public TurretBlueprint GetTurretToBuild()
+    public TurretBlueprint GetTowerToBuild()
     {
-        return turretToBuild;
+        return TowerToBuild;
     }
 }

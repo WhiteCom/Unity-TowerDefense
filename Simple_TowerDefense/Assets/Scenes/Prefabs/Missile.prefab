@@ -355,6 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parabola: 0
+  firingAngle: 45
   speed: 35
   damage: 50
   explosionRadius: 8

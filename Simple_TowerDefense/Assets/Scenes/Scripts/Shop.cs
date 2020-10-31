@@ -2,9 +2,16 @@
 
 public class Shop : MonoBehaviour
 {
-    public TurretBlueprint standardTurret;
-    public TurretBlueprint missileLauncher;
-    public TurretBlueprint laserBeamer;
+    //public TurretBlueprint standardTurret;
+    //public TurretBlueprint missileLauncher;
+    //public TurretBlueprint laserBeamer;
+
+    public TurretBlueprint Pawn_Tower;
+    public TurretBlueprint Bishop_Tower;
+    public TurretBlueprint Knight_Tower;
+    public TurretBlueprint Rook_Tower;
+    public TurretBlueprint Queen_Tower;
+    public TurretBlueprint King_Tower;
 
     BuildManager buildManager;
 
@@ -12,19 +19,34 @@ public class Shop : MonoBehaviour
     {
         buildManager = BuildManager.instance;
     }
-    public void SelectStandardTurret()
+    public void SelectPawnTower()
     {
-        Debug.Log("Standard Turret Selected");
-        buildManager.SelectTurretToBuild(standardTurret);
+        Debug.Log("Pawn Tower Selected");
+        buildManager.SelectTowerToBuild(Pawn_Tower);
     }
-    public void SelectMissileLauncher()
+    public void SelectBishopTower()
     {
-        Debug.Log("Missile Launcher Selected");
-        buildManager.SelectTurretToBuild(missileLauncher);
+        Debug.Log("Bishop Tower Selected");
+        buildManager.SelectTowerToBuild(Bishop_Tower);
     }
-    public void SelectLaserBeamer()
+    public void SelectKnightTower()
     {
-        Debug.Log("Laser Beamer Selected");
-        buildManager.SelectTurretToBuild(laserBeamer);
+        Debug.Log("Knight Tower Selected");
+        buildManager.SelectTowerToBuild(Knight_Tower);
+    }
+    public void SelectRookTower()
+    {
+        Debug.Log("Rook Tower Selected");
+        buildManager.SelectTowerToBuild(Rook_Tower);
+    }
+    public void SelectQueenTower()
+    {
+        Debug.Log("Queen Tower Selected");
+        buildManager.SelectTowerToBuild(Queen_Tower);
+    }
+    public void SelectKingTower()
+    {
+        Debug.Log("King Tower Selected");
+        buildManager.SelectTowerToBuild(King_Tower);
     }
 }
