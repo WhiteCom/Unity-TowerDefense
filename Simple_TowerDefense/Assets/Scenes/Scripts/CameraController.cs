@@ -39,20 +39,20 @@ public class CameraController : MonoBehaviour
         }
         */
 
-        if (Input.GetKey("w"))
+        if (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow))
         {
             transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
         }
 
-        if (Input.GetKey("s"))
+        if (Input.GetKey("s") || Input.GetKey(KeyCode.DownArrow))
         {
             transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.World);
         }
-        if (Input.GetKey("d"))
+        if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
         {
             transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.World);
         }
-        if (Input.GetKey("a"))
+        if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
         }

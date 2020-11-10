@@ -160,6 +160,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.37254903}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -233,6 +234,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.2863564, g: 0.9339623, b: 0.28816193, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -261,7 +263,7 @@ GameObject:
   - component: {fileID: 6429523911711679887}
   - component: {fileID: -8230587860834833850}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy_Simple
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,6 +306,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -356,7 +359,7 @@ MonoBehaviour:
   startSpeed: 10
   speed: 10
   startHealth: 100
-  worth: 50
+  worth: 5
   deathEffect: {fileID: 5485393030341640966, guid: 08c932d13f288564b9561655c22a6840,
     type: 3}
   healthBar: {fileID: 7384152243130459791}

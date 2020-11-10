@@ -30,7 +30,7 @@ public class WaveSpawner : MonoBehaviour
             return;
         }
 
-        if (waveIndex == waves.Length)
+        if (waveIndex == waves.Length && EnemiesAlives <= 0)
         {
             gameManager.WinLevel();
             this.enabled = false;
@@ -70,5 +70,10 @@ public class WaveSpawner : MonoBehaviour
     void SpawnEnemy(GameObject enemy)
     {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+    }
+
+    public int WaveIndex()
+    {
+        return waveIndex;
     }
 }

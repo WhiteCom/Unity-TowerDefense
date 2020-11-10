@@ -50,10 +50,9 @@ public class BuildManager : MonoBehaviour
     public void SelectTowerToBuild(TurretBlueprint tower)
     {
         TowerToBuild = tower;
-
         DeselectNode();
     }
-    
+   
     public TurretBlueprint GetTowerToBuild()
     {
         return TowerToBuild;

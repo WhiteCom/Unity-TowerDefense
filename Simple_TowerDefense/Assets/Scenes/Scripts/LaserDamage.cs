@@ -6,7 +6,7 @@ public class LaserDamage : MonoBehaviour
 {
     public GameObject Laser; //2초뒤 발사되는 진짜 레이저
 
-    private float MaxDistance = 65f; //Ray 길이
+    private float MaxDistance = 75f; //Ray 길이
     private int damage = 100;
     private Transform firePoint; //turret에서 가져와서 쓸것들
    

@@ -30,11 +30,23 @@ public class Node : MonoBehaviour
     public Vector3 GetBuildPosition()
     {
         TurretBlueprint _blueprint = buildManager.GetTowerToBuild();
-        if(_blueprint == null)
+        
+        if (_blueprint == null)
         {
+            //업그레이드 한 경우 빌드UI에서 택한 BuildManager 의 _blueprint 요소가 없어짐. 
+            //따라서 남아있는 turretBlueprint 요소에서 position 값을 들고옴
+            if (!isUpgraded)
+                positionOffset = turretBlueprint.prefab.transform.position;
+            else
+                positionOffset = turretBlueprint.upgradedPrefab.transform.position;
+
             return transform.position + positionOffset;
         }
-        positionOffset = _blueprint.prefab.transform.position;
+        if(!isUpgraded)
+            positionOffset = _blueprint.prefab.transform.position;
+        else
+            positionOffset = _blueprint.upgradedPrefab.transform.position;
+
         return transform.position + positionOffset;
     }
 
@@ -88,6 +100,8 @@ public class Node : MonoBehaviour
         //Get rid of the old turret
         Destroy(turret);
 
+        isUpgraded = true;
+
         //Build a new one
         GameObject _turret = (GameObject)Instantiate(turretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
@@ -95,21 +109,27 @@ public class Node : MonoBehaviour
         GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 5f); //Destroy effect after 5 seconds
 
-        isUpgraded = true;
-
         Debug.Log("Turret upgraded!");
     }
 
     public void SellTurret()
     {
-        //Destroy current Turret and earn some amount of money
-        PlayerStats.Money += turretBlueprint.GetSellAmount();
+        if (!isUpgraded) { //업그레이드 안된 경우
+            //Destroy current Turret and earn some amount of money
+            PlayerStats.Money += turretBlueprint.GetSellAmount();
+
+        }
+        else
+        { //업그레이드 된 경우
+            PlayerStats.Money += turretBlueprint.Get_UpgradeSellAmount();
+        }
 
         //Spawn a cool effect
         GameObject effect = (GameObject)Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 5f); //Destroy effect after 5 seconds
 
         Destroy(turret);
+        isUpgraded = false;
         turretBlueprint = null;
 
     }
