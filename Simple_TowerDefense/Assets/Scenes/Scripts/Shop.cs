@@ -4,9 +4,8 @@ using UnityEngine.EventSystems;
 
 public class Shop : MonoBehaviour
 {
-    //public TurretBlueprint standardTurret;
-    //public TurretBlueprint missileLauncher;
-    //public TurretBlueprint laserBeamer;
+    public static Shop instance;
+
     [Header ("Tower BluePrint")]
     public TurretBlueprint Pawn_Tower;
     public TurretBlueprint Bishop_Tower;
@@ -91,7 +90,6 @@ public class Shop : MonoBehaviour
         }
         else
             Debug.Log("You Must Buy 2Tier!");
-
     }
     public void SelectQueenTower()
     {
@@ -100,7 +98,8 @@ public class Shop : MonoBehaviour
             Debug.Log("Queen Tower Selected");
             buildManager.SelectTowerToBuild(Queen_Tower);
         }
-            
+        else
+            Debug.Log("You Must Buy 3Tier!");    
     }
     public void SelectKingTower()
     {
@@ -109,8 +108,11 @@ public class Shop : MonoBehaviour
             Debug.Log("King Tower Selected");
             buildManager.SelectTowerToBuild(King_Tower);
         }
-        
+        else
+            Debug.Log("You Must Buy 3Tier!");
+
     }
+
     public void twoTier_upgrade()
     {
         if(PlayerStats.Money < two_tier_cost)

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildManager : MonoBehaviour
 {
@@ -22,11 +23,12 @@ public class BuildManager : MonoBehaviour
 
     public NodeUI nodeUI;
 
+    public SelectedTowerUI TowerSelected;
+
     //property, only allow ourselves to get something from this variable
     public bool CanBuild { get { return TowerToBuild != null; } }
     public bool HasMoney { get { return PlayerStats.Money >= TowerToBuild.cost; } }
 
-   
     public void SelectNode(Node node)
     {
         if(selectedNode == node)
@@ -45,6 +47,7 @@ public class BuildManager : MonoBehaviour
     {
         selectedNode = null;
         nodeUI.Hide();
+        TowerSelected.ResetImage();
     }
 
     public void SelectTowerToBuild(TurretBlueprint tower)
