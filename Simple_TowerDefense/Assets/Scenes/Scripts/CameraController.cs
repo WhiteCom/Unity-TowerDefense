@@ -53,8 +53,8 @@ public class CameraController : MonoBehaviour
             this.enabled = false;
             return;
         }
-        
-        if(Main_Check)
+
+        if (Main_Check) //메인카메라인 경우
             CameraMove();
 
         CameraChange();
