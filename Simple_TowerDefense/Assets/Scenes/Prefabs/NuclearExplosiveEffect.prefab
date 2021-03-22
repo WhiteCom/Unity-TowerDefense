@@ -746,7 +746,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 20
+      value: 15
       mode: 0
       spread: 0
       speed:
@@ -975,7 +975,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 800
+        scalar: 90
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -15182,7 +15182,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 22
+      value: 15
       mode: 0
       spread: 0
       speed:
@@ -15411,7 +15411,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 800
+        scalar: 90
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -20223,7 +20223,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 100
+        scalar: 25
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -28835,7 +28835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionDamage: 50
-  explosionRadius: 25
+  explosionRadius: 20
   DamageTime_Calc: 1.7
 --- !u!82 &-2984350273767513345
 AudioSource:

@@ -7,15 +7,10 @@ public class Bullet : MonoBehaviour
     private Transform target;
 
     public bool parabola = false; //포물선 움직임
-    public float firingAngle = 45.0f;
 
     //Parabola 움직임 위한 변수
     private Vector3 startPos;
     private Vector3 destPos;
-    private float timer;
-    private float vx;
-    private float vy;
-    private float vz;
 
     [Space (10f)]
     public float speed = 70f;
@@ -42,9 +37,7 @@ public class Bullet : MonoBehaviour
     {
         startPos = transform.position;
         destPos = target.position;
-        vx = (destPos.x - startPos.x) / 2f;
-        vz = (destPos.z - startPos.z) / 2f;
-        vy = (destPos.y - startPos.y + 2 * 9.8f) / 2f;
+        
     }
     
     void Update()
@@ -73,12 +66,6 @@ public class Bullet : MonoBehaviour
         else
         {
             Vector3 dir = destPos - transform.position;
-            timer += 2f * Time.deltaTime;
-            float sx = startPos.x + vx * timer;
-            float sy = startPos.y + vy * timer - 0.5f * 9.8f * timer * timer;
-            float sz = startPos.z + vz * timer;
-            transform.position = new Vector3(sx, sy, sz);
-            
             if(dir.magnitude <= distanceThisFrame)
             {
                 HitTarget();

@@ -9,12 +9,72 @@ EditorBuildSettings:
     path: Assets/MainMenu.unity
     guid: ce03d809e89405d4892230bd5a04b1e6
   - enabled: 1
-    path: Assets/LevelSelect.unity
+    path: Assets/SelectDifficulty.unity
+    guid: 6eef93cc9c0d29646987ab807c8099ad
+  - enabled: 1
+    path: Assets/Normal-LevelSelect.unity
     guid: f8befce94763e284ea952af59788ecf4
   - enabled: 1
-    path: Assets/Level01.unity
+    path: Assets/Hard-LevelSelect.unity
+    guid: 5690b3fcca3a40f4ab3eebe191f5be9d
+  - enabled: 1
+    path: Assets/Normal-Level01.unity
+    guid: 24ddccd2873a3d4429f9a0f9ad9edf7b
+  - enabled: 1
+    path: Assets/Normal-Level02.unity
     guid: cea4e8bc5fa3b2347929a020b7851e67
   - enabled: 1
-    path: Assets/Level02.unity
-    guid: 0b65d1a15fcf419449c778bfaf3db1d5
+    path: Assets/Normal-Level03.unity
+    guid: 7fd72f5fc6c6d9d4297061e13e0eedb1
+  - enabled: 1
+    path: Assets/Normal-Level04.unity
+    guid: 3775c6a96231c184fa211bba545e6ae7
+  - enabled: 1
+    path: Assets/Normal-Level05.unity
+    guid: 9b60047ff42994840ad32ac40884d299
+  - enabled: 1
+    path: Assets/Normal-Level06.unity
+    guid: 49cbc0ccec8d10245bc34e32571f3665
+  - enabled: 1
+    path: Assets/Normal-Level07.unity
+    guid: c587e1a66ff223444b6a5274882ba2c7
+  - enabled: 1
+    path: Assets/Normal-Level08.unity
+    guid: 7a5966948ac2f094fac96d30ba6c4730
+  - enabled: 1
+    path: Assets/Normal-Level09.unity
+    guid: 7b1f0826233d5a2459462661bae9badd
+  - enabled: 1
+    path: Assets/Normal-Level10.unity
+    guid: 8da6af716b91b8249b7f7fb574484fa3
+  - enabled: 1
+    path: Assets/Hard-Level01.unity
+    guid: 5452bf10d1fc735459433c89b738d8c3
+  - enabled: 1
+    path: Assets/Hard-Level02.unity
+    guid: 27de4e1f8ebc1eb4b86e25c30540bf7d
+  - enabled: 1
+    path: Assets/Hard-Level03.unity
+    guid: 58537b7444678e6488e55483d9308cb9
+  - enabled: 1
+    path: Assets/Hard-Level04.unity
+    guid: 53a169ad685413448bb16f644b9e1059
+  - enabled: 1
+    path: Assets/Hard-Level05.unity
+    guid: 8506156575a16264e837ab4d8df3f61c
+  - enabled: 1
+    path: Assets/Hard-Level06.unity
+    guid: 162b358a9d66b35419846c4df05f48e5
+  - enabled: 1
+    path: Assets/Hard-Level07.unity
+    guid: eeca761bfd696254484d865e0e5a1d12
+  - enabled: 1
+    path: Assets/Hard-Level08.unity
+    guid: 45e3eb091dd914349882e0705b651302
+  - enabled: 1
+    path: Assets/Hard-Level09.unity
+    guid: 8ec570ee993040a4da14058251047bd3
+  - enabled: 1
+    path: Assets/Hard-Level10.unity
+    guid: 995e2405facc8374c90e3cdc8c3085ae
   m_configObjects: {}

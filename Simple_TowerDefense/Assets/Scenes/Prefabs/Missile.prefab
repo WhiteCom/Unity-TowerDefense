@@ -354,8 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed0ee9c6e99925b4e86f82cf62874457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parabola: 0
-  firingAngle: 45
+  parabola: 1
   speed: 35
   damage: 50
   explosionRadius: 8

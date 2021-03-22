@@ -5,10 +5,15 @@ using UnityEngine;
 public class CameraRotate : MonoBehaviour
 {
     private float panSpeed = 15.0f;
+    GameObject child;
 
+    void Start()
+    {
+        child = transform.GetChild(0).gameObject;
+    }
     void Update()
     {
-        if (this.enabled)
+        if (child.activeInHierarchy)
             CameraRotation();
     }
 

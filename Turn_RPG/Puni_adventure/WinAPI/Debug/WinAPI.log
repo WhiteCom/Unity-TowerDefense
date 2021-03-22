@@ -1,0 +1,17 @@
+﻿  MainApp.cpp
+D:\My_github\GameProject\Turn_RPG\Puni_adventure\WinAPI\window\MainApp.h(1,1): warning C4828: 파일에 0x1b 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 65001).
+D:\My_github\GameProject\Turn_RPG\Puni_adventure\WinAPI\window\MainApp.h(1,1): warning C4828: 파일에 0x1d 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 65001).
+D:\My_github\GameProject\Turn_RPG\Puni_adventure\WinAPI\window\MainApp.h(1,1): warning C4828: 파일에 0x1e 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 65001).
+D:\My_github\GameProject\Turn_RPG\Puni_adventure\WinAPI\window\MainApp.h(1,1): warning C4828: 파일에 0x22 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 65001).
+D:\My_github\GameProject\Turn_RPG\Puni_adventure\WinAPI\window\MainApp.h(1,1): warning C4828: 파일에 0x23 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 65001).
+D:\My_github\GameProject\Turn_RPG\Puni_adventure\WinAPI\window\MainApp.h(1,1): warning C4828: 파일에 0x41 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 65001).
+D:\My_github\GameProject\Turn_RPG\Puni_adventure\WinAPI\window\MainApp.h(1,1): warning C4828: 파일에 0x42 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 65001).
+D:\My_github\GameProject\Turn_RPG\Puni_adventure\WinAPI\window\MainApp.h(1,1): warning C4828: 파일에 0x45 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 65001).
+D:\My_github\GameProject\Turn_RPG\Puni_adventure\WinAPI\window\MainApp.h(1,1): warning C4828: 파일에 0x46 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 65001).
+D:\My_github\GameProject\Turn_RPG\Puni_adventure\WinAPI\window\MainApp.h(1,1): warning C4828: 파일에 0x48 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 65001).
+D:\My_github\GameProject\Turn_RPG\Puni_adventure\WinAPI\window\MainApp.h(1,1): warning C4828: 파일에 0x4a 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 65001).
+D:\My_github\GameProject\Turn_RPG\Puni_adventure\WinAPI\window\MainApp.h(1,1): warning C4828: 파일에 0x4b 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 65001).
+D:\My_github\GameProject\Turn_RPG\Puni_adventure\WinAPI\window\MainApp.h(1,1): warning C4828: 파일에 0x4f 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 65001).
+D:\My_github\GameProject\Turn_RPG\Puni_adventure\WinAPI\window\MainApp.h(1,1): warning C4828: 파일에 0x50 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 65001).
+D:\My_github\GameProject\Turn_RPG\Puni_adventure\WinAPI\window\MainApp.h(1,1): warning C4828: 파일에 0x56 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 65001).
+  WinAPI.vcxproj -> D:\My_github\GameProject\Turn_RPG\Puni_adventure\Debug\WinAPI.exe
