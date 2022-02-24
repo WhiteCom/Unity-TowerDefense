@@ -1,6 +1,6 @@
 # 타워디펜스 게임
 
-![initial](https://user-images.githubusercontent.com/42011665/155467886-2bd7420f-ca39-4464-81aa-706c725d10a9.png)
+![타워디펜스 포폴](https://user-images.githubusercontent.com/42011665/155468315-2384408d-7437-4d17-9c1b-98e4b9e2b980.png)
 
 
 유니티 엔진을 이용하여 제작한 타워디펜스 게임
@@ -9,7 +9,7 @@
 - 상점 시스템
 - 타워 공격 구현
 
-Youtube : https://www.youtube.com/watch?v=hRyChlb-1R4&t=131s&ab_channel=%EA%B9%80%EB%94%B0%EC%9D%8D
+Youtube : https://youtu.be/hRyChlb-1R4
 
 - Bracekys 유투버 영상, 궁수의 전설의 스킬일부를 참고하여 만든 타워디펜스 게임입니다.
 
