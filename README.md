@@ -2,7 +2,7 @@
 
 Main : Unity Game Project / Sub : etc Games
 
-https://user-images.githubusercontent.com/42011665/155467886-2bd7420f-ca39-4464-81aa-706c725d10a9.png
+![initial](https://user-images.githubusercontent.com/42011665/155467886-2bd7420f-ca39-4464-81aa-706c725d10a9.png)
 
 유니티 엔진을 이용하여 제작한 타워디펜스 게임
 - 타워 빌드 시스템 
