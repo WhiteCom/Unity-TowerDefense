@@ -2,8 +2,9 @@
 
 Main : Unity Game Project / Sub : etc Games
 
-유니티 엔진을 이용하여 이것저것 만들어보는 게임. 
+유니티 엔진을 이용하여 제작한 타워디펜스 게임
 
-- BGA_TurnRPG : 부산게임아카데미 과정을 통해 만든 턴제알피지
-- Simple TowerDefense : 타워디펜스 게임
-- UniRun : 예제를 통해 만들어본 런게임
+Youtube : https://www.youtube.com/watch?v=hRyChlb-1R4&t=131s&ab_channel=%EA%B9%80%EB%94%B0%EC%9D%8D
+
+- Simple TowerDefense : Bracekys 유투버 영상, 궁수의 전설의 스킬일부를 참고하여 만든 타워디펜스 게임입니다.
+
