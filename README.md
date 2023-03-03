@@ -1,9 +1,15 @@
-# GameProject
+# 타워디펜스 게임
 
-Main : Unity Game Project / Sub : etc Games
+![타워디펜스 포폴](https://user-images.githubusercontent.com/42011665/155468315-2384408d-7437-4d17-9c1b-98e4b9e2b980.png)
 
-유니티 엔진을 이용하여 이것저것 만들어보는 게임. 
 
-- BGA_TurnRPG : 부산게임아카데미 과정을 통해 만든 턴제알피지
-- Simple TowerDefense : 타워디펜스 게임
-- UniRun : 예제를 통해 만들어본 런게임
+유니티 엔진을 이용하여 제작한 타워디펜스 게임
+- 타워 빌드 시스템 
+- WayPoint를 이용한 길찾기 
+- 상점 시스템
+- 타워 공격 구현
+
+Youtube : https://youtu.be/hRyChlb-1R4
+
+- Bracekys 유투버 영상, 궁수의 전설의 스킬일부를 참고하여 만든 타워디펜스 게임입니다.
+
